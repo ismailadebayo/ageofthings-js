@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Age of Things</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="header">Know your <br><span class="age">age in a click</span></h1>
+
+        <div class="input-box">
+            <input type="date" name="" id="date">
+            <button onclick='yourAge()'>Calculate</button>
+        </div>
+        <p id="result"></p>
+    </div>
+
+
+    <script>
+        let userInput = document.getElementById('date')
+        userInput.max = new Date()
+
+       const yourAge=()=>{
+        let birthDate = new Date(userInput.value)
+        let birthYear = birthDate.getFullYear();
+  
+
+        let presentDate = new Date();
+        let presentYear = presentDate.getFullYear()
+       
+        let realAge = presentYear - birthYear;
+        document.getElementById('result').textContent = "You are " + realAge + " years old";
+       
+        return
+       }
+
+    </script>
+</body>
+</html>
